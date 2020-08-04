@@ -1,0 +1,13 @@
+.invalid-input {
+  color: lightgreen;
+  margin-top:7px;
+}
+label {
+  margin-top: 9px;
+}
+.input {
+  margin-bottom: 13px;
+}
+.btn btn-success input{
+  margin: 20px;
+}

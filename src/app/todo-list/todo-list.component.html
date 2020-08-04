@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="form-control dropdown">
+
+    <select (change)="updateListByStatus()" id="searchStatus">
+      <option value="" disabled>Filter tasks by stats</option>
+      <option value="New">New</option>
+      <option value="In_Progress">In Progress</option>
+      <option value="Finished">Finished</option>
+    </select>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <th>Id</th>
+    <th>Title of the Task</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Update</th>
+    <th>Delete</th>
+
+    </thead>
+    <tbody
+      *ngFor="let task of tasks">
+    <td>{{task.id}}</td>
+    <td>{{task.title}}</td>
+    <td>{{task.description}}</td>
+    <td>{{task.status}}</td>
+    <td><button class="btn btn-primary" (click)="updateTask(task)">Update</button></td>
+    <td><button class="btn btn-danger" (click)="deleteTask(task)">Delete</button></td>
+
+
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="newTask()">New Task</button> <br><br>
+  <button class="btn btn-primary" (click)="updateListByTitle()">Search</button>
+  <input
+    type="text"
+    id="searchTitle"
+    class="form-control input"
+    placeholder="Title to search">
+</div>

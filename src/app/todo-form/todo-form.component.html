@@ -1,0 +1,42 @@
+<div class="container">
+  <form (ngSubmit)="processForm()">
+    <div class="form group">
+      <label>Title</label>
+      <input
+        type="text"
+        placeholder="Enter Title"
+        class="form-control input"
+        [(ngModel)]="task.title"
+        [ngModelOptions]="{standalone: true}"
+      >
+    </div>
+    <div class="form group">
+      <label>Description</label>
+      <input
+        type="text"
+        class="form-control input"
+        placeholder="Enter Description"
+        [(ngModel)]="task.description"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+
+      Status
+    <div class="form-control dropdown">
+
+
+      <select
+          [(ngModel)]="task.status"
+                [ngModelOptions]="{standalone: true}">
+
+
+        <option value="" disabled>Choose Status of Task</option>
+        <option value="NEW">New</option>
+        <option value="IN_PROGRESS">In Progress</option>
+        <option value="FINISHED">Finished</option>
+      </select>
+
+
+    </div>
+    <input type="submit" value="Enter" class="btn btn-success input">
+  </form>
+</div>
